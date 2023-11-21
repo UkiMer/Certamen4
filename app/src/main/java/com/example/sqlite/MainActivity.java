@@ -165,10 +165,10 @@ public class MainActivity extends AppCompatActivity {
         String IDproducto = ID.getText().toString();
         String NombreProducto = Nombre.getText().toString();
         String CategoriaS = Categoria.getSelectedItem().toString();
-        Integer cantidad = Integer.parseInt(Cantidad.getText().toString());
-        Integer precio = Integer.parseInt(Precio.getText().toString());
+        String cantidad = Cantidad.getText().toString();
+        String precio = Precio.getText().toString();
         String ubicacion = Ubicacion.getSelectedItem().toString();
-        if (!IDproducto.isEmpty() && !NombreProducto.isEmpty() && !CategoriaS.equals("Seleccione:") && !cantidad.equals("") && !precio.equals("") && !ubicacion.equals("Seleccione:")){
+        if (!IDproducto.isEmpty() && !NombreProducto.isEmpty() && !CategoriaS.equals("Seleccione:") && !cantidad.equals("") && !precio.equals("") && !ubicacion.equals("Seleccione:")) {
             ContentValues DatosUsuario = new ContentValues();
             DatosUsuario.put("ID", IDproducto);
             DatosUsuario.put("NombreProducto", NombreProducto);
@@ -176,11 +176,11 @@ public class MainActivity extends AppCompatActivity {
             DatosUsuario.put("CantidadProducto", cantidad);
             DatosUsuario.put("PrecioProducto", precio);
             DatosUsuario.put("UbicacionProducto", ubicacion);
-            int Update = BaseDatos.update("Inventario_Bodega", DatosUsuario, "ID="+ IDproducto, null);
-            if (Update == 1){
+            int Update = BaseDatos.update("Inventario_Bodega", DatosUsuario, "ID=" + IDproducto, null);
+            if (Update == 1) {
                 Toast.makeText(this, "El producto ha sido modificado de forma correcta", Toast.LENGTH_SHORT).show();
                 BaseDatos.close();
-            }else {
+            } else {
                 Toast.makeText(this, "No existe el producto con ID '" + IDproducto + "'", Toast.LENGTH_SHORT).show();
             }
         } else {
