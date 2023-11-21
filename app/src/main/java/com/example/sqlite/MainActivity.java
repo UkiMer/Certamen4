@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText ID, Nombre, Cantidad, Precio;
     Spinner Categoria, Ubicacion;
 
+    // https://github.com/UkiMer/Certamen4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         Categoria.setAdapter(adapterCat);
         Ubicacion.setAdapter(adapterUbi);
-
     }
 
     public void RegistrarProducto(View view) {
